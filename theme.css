@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;700&family=Orbitron:wght@400;700&display=swap');
+
+:root {
+    --neon-blue: #00aaff;
+    --neon-purple: #aa00ff;
+    --neon-pink: #ff00aa;
+    --futuristic-cyan: #00ffff;
+    --futuristic-green: #00ff88;
+    --dark-bg: #1a1a1a;
+    --darker-bg: #222222;
+    --card-bg: #333333;
+    --text-light: #e0e0e0;
+    --text-dark: #1a1a1a;
+    --glow-shadow: 0 0 8px var(--neon-blue), 0 0 15px var(--neon-blue);
+    --transition-speed: 0.4s ease-in-out;
+}
+
+/* General Body Styles */
+body {
+    font-family: 'Exo 2', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+    overflow-x: hidden; /* Prevent horizontal scroll from animations */
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--neon-blue);
+    text-shadow: var(--glow-shadow);
+    transition: color var(--transition-speed), text-shadow var(--transition-speed);
+}
+
+/* Navbar */
+header {
+    background-color: rgba(34, 34, 34, 0.8); /* Dark transparent */
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .logo {
+    color: var(--neon-blue);
+    text-shadow: var(--glow-shadow);
+}
+
+.nav-links a {
+    color: var(--text-light);
+    transition: var(--transition-speed);
+}
+
+.nav-links a:hover {
+    color: var(--neon-pink);
+    text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
+}
+
+/* Burger menu lines */
+.burger div {
+    background-color: var(--neon-blue);
+    box-shadow: 0 0 5px var(--neon-blue);
+}
+
+/* Main Content Styling */
+main {
+    background-color: transparent; /* Let section backgrounds handle it */
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0; /* Sections will handle their own padding */
+}
+
+/* Buttons */
+button, .social-links a {
+    background-color: var(--neon-blue);
+    color: var(--text-dark);
+    border: none;
+    border-radius: 5px;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-speed);
+    box-shadow: 0 0 5px var(--neon-blue);
+}
+
+button:hover, .social-links a:hover {
+    background-color: var(--neon-purple);
+    box-shadow: 0 0 10px var(--neon-purple), 0 0 20px var(--neon-purple);
+    transform: translateY(-2px);
+}
+
+/* About Me Page - Cyberpunk Aesthetic */
+.about-me {
+    position: relative;
+    overflow: hidden;
+    padding: 50px 20px;
+    background: linear-gradient(45deg, #1a1a1a, #2a0a3a); /* Subtle gradient */
+}
+
+.about-me::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%2300aaff" opacity="0.1"/></svg>');
+    background-size: 20px 20px;
+    opacity: 0.3;
+    animation: moveGrid 20s linear infinite;
+}
+
+@keyframes moveGrid {
+    from { background-position: 0 0; }
+    to { background-position: 100% 100%; }
+}
+
+.about-me .bio-section h1 {
+    color: var(--neon-pink);
+    text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink), 0 0 30px var(--neon-pink);
+}
+
+.about-me .profile-photo {
+    border: 3px solid var(--neon-blue);
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.about-me .skills-grid .skill-category {
+    background-color: rgba(51, 51, 51, 0.7);
+    border: 1px solid var(--neon-purple);
+    box-shadow: 0 0 8px var(--neon-purple);
+    backdrop-filter: blur(3px);
+}
+
+.about-me .skill-category h3 {
+    color: var(--neon-blue);
+    border-bottom-color: var(--neon-pink);
+    text-shadow: 0 0 5px var(--neon-blue);
+}
+
+/* Portfolio Page - Futuristic Tech Aesthetic */
+.portfolio {
+    position: relative;
+    overflow: hidden;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #1a1a1a, #0a2a2a); /* Cool cyan/green gradient */
+}
+
+.portfolio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M0 50L50 0L100 50L50 100Z" fill="none" stroke="%2300ffff" stroke-width="0.5" opacity="0.2"/></svg>');
+    background-size: 50px 50px;
+    opacity: 0.4;
+    animation: moveCircuit 30s linear infinite;
+}
+
+@keyframes moveCircuit {
+    from { background-position: 0 0; }
+    to { background-position: 200% 200%; }
+}
+
+.portfolio h1 {
+    color: var(--futuristic-cyan);
+    text-shadow: 0 0 10px var(--futuristic-cyan), 0 0 20px var(--futuristic-cyan);
+}
+
+.portfolio .model-item {
+    background-color: rgba(51, 51, 51, 0.8);
+    border: 1px solid var(--futuristic-green);
+    box-shadow: 0 0 10px var(--futuristic-green);
+    backdrop-filter: blur(5px);
+}
+
+.portfolio .model-item h2 {
+    color: var(--futuristic-cyan);
+    text-shadow: 0 0 5px var(--futuristic-cyan);
+}
+
+.portfolio .sketchfab-embed-wrapper {
+    border: 2px solid var(--futuristic-green);
+    box-shadow: 0 0 15px var(--futuristic-green);
+}
+
+/* Contact Page - General Dark Theme with Neon Accents */
+.contact {
+    padding: 50px 20px;
+    background-color: var(--darker-bg);
+}
+
+.contact h1 {
+    color: var(--neon-blue);
+    text-shadow: var(--glow-shadow);
+}
+
+.contact .contact-info a {
+    color: var(--neon-blue);
+    text-shadow: 0 0 3px var(--neon-blue);
+}
+
+.contact .contact-info a:hover {
+    color: var(--neon-pink);
+    text-shadow: 0 0 5px var(--neon-pink);
+}
+
+.contact .contact-form-section {
+    background-color: rgba(51, 51, 51, 0.7);
+    border: 1px solid var(--neon-purple);
+    box-shadow: 0 0 8px var(--neon-purple);
+    backdrop-filter: blur(3px);
+}
+
+.contact .contact-form label {
+    color: var(--neon-blue);
+}
+
+.contact .contact-form input[type="text"],
+.contact .contact-form input[type="email"],
+.contact .contact-form textarea {
+    border: 1px solid var(--neon-purple);
+    background-color: #444444;
+    color: var(--text-light);
+}
+
+.contact .contact-form input[type="text"]:focus,
+.contact .contact-form input[type="email"]:focus,
+.contact .contact-form textarea:focus {
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 8px var(--neon-pink);
+}
+
+.contact .contact-form button {
+    background-color: var(--neon-blue);
+    box-shadow: 0 0 5px var(--neon-blue);
+}
+
+.contact .contact-form button:hover {
+    background-color: var(--neon-purple);
+    box-shadow: 0 0 10px var(--neon-purple), 0 0 20px var(--neon-purple);
+}
+
+/* Footer */
+footer {
+    background-color: var(--darker-bg);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+    color: var(--text-light);
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .about-me::before, .portfolio::before {
+        background-size: 15px 15px; /* Adjust pattern size for mobile */
+    }
+
+    .portfolio .model-gallery {
+        grid-template-columns: 1fr; /* Single column for mobile */
+    }
+}
+
+/* Portfolio Page Specifics */
+.portfolio .model-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2x2 grid for desktop */
+    gap: 30px;
+    margin-top: 30px;
+}
