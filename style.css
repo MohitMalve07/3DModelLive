@@ -199,8 +199,8 @@ p {
 }
 
 .contact .social-links a {
-    background-color: #00aaff;
-    color: #1a1a1a;
+    /* Removed specific background and color to allow theme.css to apply */
+    color: var(--text-light); /* Explicitly setting text color to white */
     padding: 10px 15px;
     border-radius: 5px;
     text-decoration: none;
@@ -209,7 +209,7 @@ p {
 }
 
 .contact .social-links a:hover {
-    background-color: #0077cc;
+    /* Allow theme.css to handle hover effects */
 }
 
 .contact .contact-form-section {

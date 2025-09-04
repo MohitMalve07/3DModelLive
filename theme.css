@@ -72,8 +72,8 @@ main {
 
 /* Buttons */
 button, .social-links a {
-    background-color: var(--neon-blue);
-    color: var(--text-dark);
+    background-color: var(--neon-blue); /* Keep button color blue */
+    color: var(--text-light); /* Change text to white */
     border: none;
     border-radius: 5px;
     padding: 12px 25px;
@@ -87,8 +87,8 @@ button, .social-links a {
 }
 
 button:hover, .social-links a:hover {
-    background-color: var(--neon-purple);
-    box-shadow: 0 0 10px var(--neon-purple), 0 0 20px var(--neon-purple);
+    background-color: var(--neon-blue); /* Keep background color blue on hover */
+    box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue); /* Add glowing effect on hover */
     transform: translateY(-2px);
 }
 
